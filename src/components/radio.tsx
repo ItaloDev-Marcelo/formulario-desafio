@@ -1,10 +1,10 @@
-import {type UseFormRegister, type FieldValues } from "react-hook-form"
+import {type UseFormRegister} from "react-hook-form"
+import { type FormData } from "../lib/yupSchema"
 
-
-type OptionProps = {
+interface OptionProps  {
     valor: string,
-    name: string,
-    register: UseFormRegister<FieldValues>
+    name: keyof FormData,
+    register: UseFormRegister<FormData>
 }
 
 
@@ -13,9 +13,7 @@ const InputRadio = ({valor, name, register}:OptionProps) => {
       <div>
           <label>
             {valor}
-           <input type='radio' value={valor}
-            {...(register ? register(name) : {})}
-             />
+            <input type='radio' value={valor} {...register(name)} />
           </label>
       </div>
     )

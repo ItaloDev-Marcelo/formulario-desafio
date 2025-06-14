@@ -1,6 +1,15 @@
 
+type NameType = "nome" | "email" | "telefone" | "linkedin" | "radioType";
 
-export default [
+interface inputData {
+    type: string,
+    id: string,
+    name: NameType,
+    label: string,
+    placeholder: string
+}
+
+const arrData :inputData[]  = [
     {
         type: 'text',
         id: 'yourName',
@@ -33,3 +42,6 @@ export default [
     
 
 ]
+
+
+export default arrData;
