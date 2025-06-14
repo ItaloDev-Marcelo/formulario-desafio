@@ -1,11 +1,11 @@
-import { useForm } from 'react-hook-form'
 import './App.css'
+import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
+import {formsSchema, type FormData} from './lib/yupSchema'
 import Input from './components/input'
 import InputRadio from './components/radio'
-import {formsSchema,type FormData} from './lib/yupSchema'
-
-import Data from './data/inputData'
+import InputData from './data/inputsData'
+import RadioData from './data/radiosData'
 import ErrorText from './components/errorText';
 
 
@@ -23,37 +23,12 @@ function App() {
      reset()
   }
 
-  type RadioFormate = {
-    value: string
- }
-
-
- const radioData:RadioFormate[] =  [
-  {
-    value: 'frontend'
-  },
-  {
-    value: 'mobile'
-  },
-  {
-    value: 'backend'
-  },
-  {
-    value: 'fullstack'
-  },
-  {
-    value: 'devops'
-  }
- ]
-
-
-
 
   return (
       <form onSubmit={handleSubmit(submit)}>
       <div>
          {
-        Data.map(({type,name,label,placeholder,id}) => {
+        InputData.map(({type,name,label,placeholder,id}) => {
            return  <Input tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
         })
@@ -63,7 +38,7 @@ function App() {
       <label>Stack de desenvolvimento</label>
       <div>
             {
-            radioData.map(({value}) => {
+            RadioData.map(({value}) => {
                return <InputRadio valor={value} name='radioType' register={register}/>
             })
            }
