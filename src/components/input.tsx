@@ -1,6 +1,8 @@
 
 import {type UseFormRegister } from "react-hook-form"
 import {type FormData } from "../lib/yupSchema"
+import ErrorText from "./errorText"
+import {type  FieldErrors } from "react-hook-form"
 
 
 interface InputProps {
@@ -9,16 +11,20 @@ interface InputProps {
     label: string,
     placeholder: string,
     id:string,
-    register: UseFormRegister<FormData>
+    register: UseFormRegister<FormData>,
+    errors: FieldErrors<FormData>
 }
 
-const Input = ({tipo, name, label, placeholder, id, register}: InputProps) => {
+const Input = ({tipo, name, label, placeholder, id, register, errors}: InputProps) => {
     return (
+       <>
         <label htmlFor={id}>
         {label}
         <input type={tipo} id={id} placeholder={placeholder}
          {...register(name)} />
        </label>
+       <ErrorText errors={errors} name={name} />
+       </>
     )
 }
 
