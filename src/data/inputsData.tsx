@@ -9,7 +9,7 @@ interface inputData {
     placeholder: string
 }
 
-const arrData :inputData[]  = [
+export  const arrData :inputData[]  = [
     {
         type: 'text',
         id: 'yourName',
@@ -23,7 +23,11 @@ const arrData :inputData[]  = [
         name: 'email',
         label: 'Email',
         placeholder: 'your Email'
-    },
+    }
+]
+
+
+export const arrData2 :inputData[] = [
      {
         type: 'tel',
         id: 'yourTell',
@@ -37,14 +41,13 @@ const arrData :inputData[]  = [
         name: 'linkedin',
         label: 'Linkedin',
         placeholder: 'https:'
-    },
-
-    
-
+    }
 ]
 
 
 
 
 
-export default arrData;
+
+
+// export default arrData arrData2;

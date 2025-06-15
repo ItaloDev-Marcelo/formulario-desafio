@@ -17,14 +17,14 @@ interface InputProps {
 
 const Input = ({tipo, name, label, placeholder, id, register, errors}: InputProps) => {
     return (
-       <>
-        <label htmlFor={id}>
+       <div className="flex flex-col ">
+        <label htmlFor={id} className='py' >
         {label}
         <input type={tipo} id={id} placeholder={placeholder}
-         {...register(name)} />
+         {...register(name)} className='border-1 w-[100%] h-[45px] ' />
        </label>
        <ErrorText errors={errors} name={name} />
-       </>
+       </div>
     )
 }
 
