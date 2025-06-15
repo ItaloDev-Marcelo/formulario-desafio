@@ -24,7 +24,8 @@ export default  function RegistrationForm() {
 
 
   return (
-      <form onSubmit={handleSubmit(submit)} className='bg-white mt-2 p-2 w-[325px] md:mt-3 md:w-[400px] lg:w-[500px]  ' >
+      <form onSubmit={handleSubmit(submit)} className='bg-medium-gray mt-2 p-4
+       w-[325px] md:mt-3 md:w-[448px] rounded-[12px] border-1 ' >
       <legend className='text-center my-4'>Cadastro de Desenvolvedor</legend>
       <div>
       <div>
@@ -37,7 +38,7 @@ export default  function RegistrationForm() {
       </div>
       <div >
       <label>Stack de desenvolvimento</label>
-      <div className='grid gap-2 grid-cols-2'>
+      <div className='grid gap-2 grid-cols-2 my-2' >
             {
             RadioData.map(({value}) => {
                return <InputRadio valor={value} name='radioType' register={register}/>
@@ -54,7 +55,7 @@ export default  function RegistrationForm() {
         })
         }
       </div>
-      <button className='text-center bg-blue w-[100%] h-[35px] mt-2  '>Enviar</button>
+      <button className='text-center bg-blue font-bold w-[100%] h-[42px] mt-2 rounded-[6px]  '>Enviar</button>
       </div>
       </form>
   )

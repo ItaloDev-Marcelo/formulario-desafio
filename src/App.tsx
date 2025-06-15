@@ -3,7 +3,7 @@ import RegistrationForm from './components/form';
 function App() {
 
   return (
-     <main className='bg-dark-blue h-[100vh] center font-inter '>
+     <main className=' center font-inter text-white '>
         <RegistrationForm/>
      </main>
   )

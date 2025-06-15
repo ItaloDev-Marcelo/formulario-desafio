@@ -8,20 +8,30 @@
     --font-inter: "Inter", sans-serif;
 }
 
-.border-1 {
-    border: 1px solid #4b5563;
+body {
+    background-color:  #191f28;
 }
 
+.border-1 {
+    border: 1px solid  #374151;
+}
+
+.border-2 {
+    border: 1px solid  #4b5563;
+}
+
+
 .center {
-    margin: 0 auto;
+    margin: 1em auto;
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
 }
 
-input[type='text'], input[type='email'], input[type='tel'] {
-    padding: 0 .3em;
+legend {
+    font-size: 1.4em;
+    font-weight: 700;
 }
 
 .py{
@@ -29,6 +39,26 @@ input[type='text'], input[type='email'], input[type='tel'] {
 }
 
 label:has( input[type="radio"]:checked ){
-    outline: 2px solid red;
+     background-color: #2563eb;
+         border: none;
+    font-weight: 500;
   }
 
+  label:hover:has( input[type="radio"]){
+     background-color: #2563eb;
+  }
+
+
+
+@media (min-width:1336px) {
+    form {
+        transform: scale(0.9)
+    }
+}
+
+@media (min-width:1440px) {
+    form {
+        margin-top: 4em;
+        transform: scale(1)
+    }
+}

@@ -15,14 +15,14 @@ export  const arrData :inputData[]  = [
         id: 'yourName',
         name: 'nome',
         label: 'Nome completo',
-        placeholder: 'your Name'
+        placeholder: ''
     },
      {
         type: 'email',
         id: 'yourEmail',
         name: 'email',
         label: 'Email',
-        placeholder: 'your Email'
+        placeholder: ''
     }
 ]
 
@@ -33,14 +33,14 @@ export const arrData2 :inputData[] = [
         id: 'yourTell',
         name: 'telefone',
         label: 'Telefone',
-        placeholder: '(DD)4021345432'
+        placeholder: ''
     },
     {
         type: 'text',
         id: 'yourLinkedin',
         name: 'linkedin',
         label: 'Linkedin',
-        placeholder: 'https:'
+        placeholder: 'https://www.linkedin.com/in/seu-perfil'
     }
 ]
 
