@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup';
-import {formsSchema, type FormData} from '../lib/yupSchema'
+import { zodResolver } from "@hookform/resolvers/zod";
+import { schema, type FormData } from '../lib/zodSchema';
 import Input from './input'
 import InputRadio from './radio'
 import {arrData, arrData2} from '../data/inputsData'
@@ -15,8 +15,8 @@ export default  function RegistrationForm() {
 
   const [popUp, setPopUp] = useState(false)
 
-  const {handleSubmit, register, formState: {errors}, reset} = useForm<FormData>({
-    resolver: yupResolver(formsSchema)
+  const {handleSubmit, register, formState: {errors}, reset} =useForm<FormData>({
+    resolver: zodResolver(schema),
   })
 
   interface objetoFormate {
