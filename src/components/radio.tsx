@@ -11,7 +11,9 @@ interface OptionProps  {
 const InputRadio = ({valor, name, register}:OptionProps) => {
     return (
           <div>
-            <label className="flex cursor-pointer py flex-row border-2 items-start h-[40px] w-[180] rounded-[6px] "
+            <label className="flex cursor-pointer py flex-row border-2 items-start 
+            w-[100%]
+            h-[40px] md:w-[180] rounded-[6px] "
            id={valor} >
             <span className='px-2 py-1'>{valor}</span>
             <input type='radio' value={valor} {...register(name)} className='hidden'   />
