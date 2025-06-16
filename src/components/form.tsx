@@ -75,7 +75,7 @@ export default  function RegistrationForm() {
         })
         }
       </div>
-      <button className='text-center bg-blue font-bold w-[100%] h-[42px] mt-2 rounded-[6px]  '>Enviar</button>
+      <button className='text-center bg-blue hover:bg-blue-500 font-bold w-[100%] h-[42px] mt-2 rounded-[6px] cursor-pointer  '>Enviar</button>
       </div>
        </form>
 

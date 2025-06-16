@@ -45,7 +45,7 @@ label:has( input[type="radio"]:checked ){
   }
 
   label:hover:has( input[type="radio"]){
-     background-color: #2563eb;
+     background-color: #376ad6;
   }
 
 
