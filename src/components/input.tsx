@@ -1,6 +1,6 @@
 
 import {type UseFormRegister } from "react-hook-form"
-import {type FormData } from "../lib/yupSchema"
+import {type FormData } from "../lib/zodSchema"
 import ErrorText from "./errorText"
 import {type  FieldErrors } from "react-hook-form"
 

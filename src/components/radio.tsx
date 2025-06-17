@@ -1,5 +1,5 @@
 import {type UseFormRegister} from "react-hook-form"
-import { type FormData } from "../lib/yupSchema"
+import {type FormData } from "../lib/zodSchema"
 
 interface OptionProps  {
     valor: string,

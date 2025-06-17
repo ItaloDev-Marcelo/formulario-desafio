@@ -2,6 +2,7 @@
 type NameType = "nome" | "email" | "telefone" | "linkedin" | "radioType";
 
 interface inputData {
+    key: number,
     type: string,
     id: string,
     name: NameType,
@@ -9,8 +10,9 @@ interface inputData {
     placeholder: string
 }
 
-export  const arrData :inputData[]  = [
+export const arrData :inputData[]  = [
     {
+        key: 0,
         type: 'text',
         id: 'yourName',
         name: 'nome',
@@ -18,6 +20,7 @@ export  const arrData :inputData[]  = [
         placeholder: ''
     },
      {
+        key: 1,
         type: 'email',
         id: 'yourEmail',
         name: 'email',
@@ -29,6 +32,7 @@ export  const arrData :inputData[]  = [
 
 export const arrData2 :inputData[] = [
      {
+        key: 1,
         type: 'tel',
         id: 'yourTell',
         name: 'telefone',
@@ -36,6 +40,7 @@ export const arrData2 :inputData[] = [
         placeholder: ''
     },
     {
+        key: 2,
         type: 'text',
         id: 'yourLinkedin',
         name: 'linkedin',

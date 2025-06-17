@@ -6,20 +6,15 @@ import InputRadio from './radio'
 import {arrData, arrData2} from '../data/inputsData'
 import RadioData from '../data/radiosData'
 import ErrorText from '../components/errorText';
-import {useState } from 'react';
+import {useState , useEffect} from 'react';
 
 
 
 export default  function RegistrationForm() {
 
 
-  const [popUp, setPopUp] = useState(false)
-
-  const {handleSubmit, register, formState: {errors}, reset} =useForm<FormData>({
-    resolver: zodResolver(schema),
-  })
-
-  interface objetoFormate {
+  const [popUp, setPopUp] = useState(false);
+   interface objetoFormate {
     nome: string
     email: string
     telefone: string | number
@@ -27,7 +22,11 @@ export default  function RegistrationForm() {
     linkedin:string
   }
 
+  const {handleSubmit, register, formState: {errors}, reset} =useForm<FormData>({
+    resolver: zodResolver(schema),
+  });
 
+ 
 
   const submit = (data:objetoFormate) => {
     const {nome, email, telefone, radioType, linkedin} = data
@@ -37,10 +36,20 @@ export default  function RegistrationForm() {
     reset()
   }
 
-   setTimeout(() => {
+  function showTime() {
+    const timer = setTimeout(() => {
         setPopUp(false)
-      }, 4000)
+      }, 4000);
+      return timer
+  }
+  
 
+      useEffect(() => {
+        const timer = showTime()
+          return () => {
+             clearInterval(timer)
+          }
+      }, [popUp])
 
   return (
      <>
@@ -50,8 +59,8 @@ export default  function RegistrationForm() {
       <div>
       <div>
          {
-        arrData.map(({type,name,label,placeholder,id}) => {
-           return  <Input key={id} tipo={type} name={name} register={register} label={label}
+        arrData.map(({type,name,label,placeholder,id, key}) => {
+           return  <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
         })
         }
@@ -60,8 +69,8 @@ export default  function RegistrationForm() {
       <label>Stack de desenvolvimento</label>
       <div className='grid gap-2 grid-cols-2 my-2' >
             {
-            RadioData.map(({value}) => {
-               return <InputRadio key={value} valor={value} name='radioType' register={register}/>
+            RadioData.map(({value, key}) => {
+               return <InputRadio key={key} valor={value} name='radioType' register={register}/>
             })
            }
       </div>
@@ -69,8 +78,8 @@ export default  function RegistrationForm() {
       </div>
       <div >
          {
-        arrData2.map(({type,name,label,placeholder,id}) => {
-           return  <Input key={id} tipo={type} name={name} register={register} label={label}
+        arrData2.map(({type,name,label,placeholder,id, key}) => {
+           return  <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
         })
         }

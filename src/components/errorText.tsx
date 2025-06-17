@@ -1,4 +1,4 @@
-import {type FormData } from "../lib/yupSchema"
+import {type FormData } from "../lib/zodSchema"
 import {type  FieldErrors } from "react-hook-form"
 import { motion } from "framer-motion"
 interface ErrorType {
@@ -7,8 +7,8 @@ interface ErrorType {
 }
 
 const ErrorText = ({errors, name}:ErrorType) => {
-    return <motion.p initial={{opacity: 0, x: '-20px'}} animate={{opacity: 1, x: 0}} 
-  transition={{ ease: 'easeIn' , duration: 0.5 }} 
+    return <motion.p initial={{opacity: .2, x: '-50' }} animate={{opacity: 1, x: 0}}  
+  transition={{ ease: 'easeIn' , type: 'spring' , duration: 1, visualDuration: 0.7,}} 
       className="text-red-400"> {errors[name]?.message} </motion.p> 
 }
 
