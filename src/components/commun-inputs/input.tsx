@@ -1,19 +1,7 @@
-
-import {type UseFormRegister } from "react-hook-form"
-import {type FormData } from "../lib/zodSchema"
-import ErrorText from "./errorText"
-import {type  FieldErrors } from "react-hook-form"
+import type { InputProps } from "../../global-interface"
+import ErrorText from "../error-alert/errorText"
 
 
-interface InputProps {
-    tipo: string,
-    name: keyof FormData,
-    label: string,
-    placeholder: string,
-    id:string,
-    register: UseFormRegister<FormData>,
-    errors: FieldErrors<FormData>
-}
 
 const Input = ({tipo, name, label, placeholder, id, register, errors}: InputProps) => {
     return (

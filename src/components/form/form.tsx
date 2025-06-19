@@ -1,12 +1,12 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from "@hookform/resolvers/zod";
-import { schema, type FormData } from '../lib/zodSchema';
-import Input from './input'
-import InputRadio from './radio'
-import {arrData, arrData2} from '../data/inputsData'
-import RadioData from '../data/radiosData'
-import ErrorText from '../components/errorText';
+import { schema, type FormData } from '../../lib/zodSchema';
+import Input from '../commun-inputs/input'
+import InputRadio from '../commun-inputs/radio'
+import ErrorText from '../error-alert/errorText';
 import {useState , useEffect} from 'react';
+import type { objetoFormate } from '../../global-interface';
+import { InputData0, InputData1, InputRadioData0 } from '../../data/globalData';
 
 
 
@@ -14,19 +14,8 @@ export default  function RegistrationForm() {
 
 
   const [popUp, setPopUp] = useState(false);
-   interface objetoFormate {
-    nome: string
-    email: string
-    telefone: string | number
-    radioType:string
-    linkedin:string
-  }
+  const {handleSubmit, register, formState: {errors}, reset} =useForm<FormData>({resolver: zodResolver(schema)});
 
-  const {handleSubmit, register, formState: {errors}, reset} =useForm<FormData>({
-    resolver: zodResolver(schema),
-  });
-
- 
 
   const submit = (data:objetoFormate) => {
     const {nome, email, telefone, radioType, linkedin} = data
@@ -43,13 +32,12 @@ export default  function RegistrationForm() {
       return timer
   }
   
-
-      useEffect(() => {
+  useEffect(() => {
         const timer = showTime()
           return () => {
              clearInterval(timer)
           }
-      }, [popUp])
+  }, [popUp])
 
   return (
      <>
@@ -59,7 +47,7 @@ export default  function RegistrationForm() {
       <div>
       <div>
          {
-        arrData.map(({type,name,label,placeholder,id, key}) => {
+        InputData0.map(({type,name,label,placeholder,id, key}) => {
            return  <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
         })
@@ -69,8 +57,10 @@ export default  function RegistrationForm() {
       <label>Stack de desenvolvimento</label>
       <div className='grid gap-2 grid-cols-2 my-2' >
             {
-            RadioData.map(({value, key}) => {
-               return <InputRadio key={key} valor={value} name='radioType' register={register}/>
+            InputRadioData0.map(({value, key,classes,inputclass,type}) => {
+               return <InputRadio key={key} valor={value} name='radioType'
+               classes={classes} inputclass={inputclass}  type={type}
+               register={register}/>
             })
            }
       </div>
@@ -78,7 +68,7 @@ export default  function RegistrationForm() {
       </div>
       <div >
          {
-        arrData2.map(({type,name,label,placeholder,id, key}) => {
+        InputData1.map(({type,name,label,placeholder,id, key}) => {
            return  <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
         })

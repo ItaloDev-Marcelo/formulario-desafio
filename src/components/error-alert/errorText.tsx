@@ -1,10 +1,7 @@
-import {type FormData } from "../lib/zodSchema"
-import {type  FieldErrors } from "react-hook-form"
+
 import { motion } from "framer-motion"
-interface ErrorType {
-   name: keyof FormData,
-   errors: FieldErrors<FormData>
-}
+import type { ErrorType } from "../../global-interface"
+
 
 const ErrorText = ({errors, name}:ErrorType) => {
     return <motion.p initial={{opacity: .2, x: '-50' }} animate={{opacity: 1, x: 0}}  
