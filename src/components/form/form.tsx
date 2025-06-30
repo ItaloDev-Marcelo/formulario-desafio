@@ -47,31 +47,30 @@ export default  function RegistrationForm() {
       <div>
       <div>
          {
-        InputData0.map(({type,name,label,placeholder,id, key}) => {
-           return  <Input key={key} tipo={type} name={name} register={register} label={label}
+        InputData0.map(({type,name,label,placeholder,id, key}) =>  ( 
+          <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
-        })
+        ))
         }
       </div>
       <div >
       <label>Stack de desenvolvimento</label>
       <div className='grid gap-2 grid-cols-2 my-2' >
             {
-            InputRadioData.map(({value, key,classes,inputclass,type}) => {
-               return <InputRadio key={key} valor={value} name='radioType'
+            InputRadioData.map(({value, key,classes,inputclass,type}) => (
+                <InputRadio key={key} valor={value} name='radioType'
                classes={classes} inputclass={inputclass}  type={type}
-               register={register}/>
-            })
+               register={register}/>) )
            }
       </div>
       <ErrorText errors={errors} name='radioType' />
       </div>
       <div >
          {
-        InputData1.map(({type,name,label,placeholder,id, key}) => {
-           return  <Input key={key} tipo={type} name={name} register={register} label={label}
+        InputData1.map(({type,name,label,placeholder,id, key}) => (
+           <Input key={key} tipo={type} name={name} register={register} label={label}
             placeholder={placeholder} id={id} errors={errors} />
-        })
+        ))
         }
       </div>
       <button className='text-center bg-blue hover:bg-blue-500 font-bold w-[100%] h-[42px] mt-2 rounded-[6px] cursor-pointer  '>Enviar</button>
