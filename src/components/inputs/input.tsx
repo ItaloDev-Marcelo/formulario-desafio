@@ -1,5 +1,5 @@
-import type { InputProps } from "../../global-interface"
-import ErrorText from "../error-alert/errorText"
+import type { InputProps } from "../../interfaces/inputInterfaces"
+import ErrorText from "../error/errorText"
 
 
 

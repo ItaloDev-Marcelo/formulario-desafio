@@ -1,47 +1,8 @@
-import type { inputData, RadioFormate } from "../global-interface"
-
-export const InputData0 :inputData[]  = [
-    {
-        key: 0,
-        type: 'text',
-        id: 'yourName',
-        name: 'nome',
-        label: 'Nome completo',
-        placeholder: ''
-    },
-     {
-        key: 1,
-        type: 'email',
-        id: 'yourEmail',
-        name: 'email',
-        label: 'Email',
-        placeholder: ''
-    }
-]
-
-
-export const InputData1 :inputData[] = [
-     {
-        key: 1,
-        type: 'tel',
-        id: 'yourTell',
-        name: 'telefone',
-        label: 'Telefone',
-        placeholder: ''
-    },
-    {
-        key: 2,
-        type: 'text',
-        id: 'yourLinkedin',
-        name: 'linkedin',
-        label: 'Linkedin',
-        placeholder: 'https://www.linkedin.com/in/seu-perfil'
-    }
-]
+import type { RadioFormate } from "../interfaces/radioInterfaces";
 
 
 
-export const InputRadioData0 :RadioFormate[] =  [
+export const InputRadioData :RadioFormate[] =  [
   {
     key: 0,
     value: 'frontend',

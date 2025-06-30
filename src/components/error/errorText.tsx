@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion"
-import type { ErrorType } from "../../global-interface"
+import type { ErrorType } from "../../interfaces/errorInterface"
 
 
 const ErrorText = ({errors, name}:ErrorType) => {

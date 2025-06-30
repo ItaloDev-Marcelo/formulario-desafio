@@ -1,13 +1,13 @@
 import { useForm } from 'react-hook-form'
 import { zodResolver } from "@hookform/resolvers/zod";
 import { schema, type FormData } from '../../lib/zodSchema';
-import Input from '../commun-inputs/input'
-import InputRadio from '../commun-inputs/radio'
-import ErrorText from '../error-alert/errorText';
+import Input from '../inputs/input'
+import InputRadio from '../inputs/radio'
+import ErrorText from '../error/errorText';
 import {useState , useEffect} from 'react';
-import type { objetoFormate } from '../../global-interface';
-import { InputData0, InputData1, InputRadioData0 } from '../../data/globalData';
-
+import type { objetoFormate } from '../../interfaces/formInterface';
+import {InputData0, InputData1} from '../../Form-data/inputData';
+import {InputRadioData} from '../../Form-data/radioData';
 
 
 export default  function RegistrationForm() {
@@ -57,7 +57,7 @@ export default  function RegistrationForm() {
       <label>Stack de desenvolvimento</label>
       <div className='grid gap-2 grid-cols-2 my-2' >
             {
-            InputRadioData0.map(({value, key,classes,inputclass,type}) => {
+            InputRadioData.map(({value, key,classes,inputclass,type}) => {
                return <InputRadio key={key} valor={value} name='radioType'
                classes={classes} inputclass={inputclass}  type={type}
                register={register}/>

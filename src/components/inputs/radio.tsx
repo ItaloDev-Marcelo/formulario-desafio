@@ -1,4 +1,4 @@
-import type { RadioProps} from "../../global-interface"
+import type { RadioProps} from "../../interfaces/radioInterfaces"
 
 
 const InputRadio = ({valor, name, register,classes,inputclass,type}:RadioProps) => {
